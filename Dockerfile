@@ -10,4 +10,6 @@ RUN apt install -y texlive-full python3-pygments
 
 WORKDIR /project
 
+COPY compress /usr/local/bin
+
 CMD cd template && pdflatex -shell-escape -interaction=nonstopmode -halt-on-error main
