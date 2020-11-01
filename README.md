@@ -41,3 +41,11 @@ docker run --rm -v $(pwd)/..:/project -it 7rocky/latex
 ```
 
 It is important that the absolute path to the working directory (`pwd`) does not contain spaces.
+
+The following command can be used to compress the PDF file (if needed):
+
+```bash
+docker run --rm -v $(pwd)/..:/project -it 7rocky/latex compress
+```
+
+Hope it is useful! :smile:
