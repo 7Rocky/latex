@@ -9,7 +9,6 @@ The main advantage of using this Docker image is that the installation of packag
 The image will work using a certain project structure. There is a template posted on https://github.com/7Rocky/plantilla-informe-LaTeX. Although it is in Spanish, it is easy to follow. Basically, the project structure is:
 
 ```bash
-├── compress.sh
 ├── src/
 │   └── ...
 └── template/
@@ -37,15 +36,16 @@ The image will work using a certain project structure. There is a template poste
 The command to compile the project is:
 
 ```bash
-docker run --rm -v $(pwd)/..:/project -it 7rocky/latex
+docker run --rm -v ${PWD}/..:/project -it 7rocky/latex
 ```
 
 It is important that the absolute path to the working directory (`pwd`) does not contain spaces.
 
-The following command can be used to compress the PDF file (if needed):
+The following command can be used to compress the PDF file and to generate bibliography (if needed):
 
 ```bash
-docker run --rm -v $(pwd)/..:/project -it 7rocky/latex compress
+docker run --rm -v ${PWD}/..:/project -it 7rocky/latex compress
+docker run --rm -v ${PWD}/..:/project -it 7rocky/latex bib
 ```
 
 Hope it is useful! :smile:
